@@ -14,14 +14,13 @@ class ShopProduct {
 	}
 
 	public function getProducer() {
-		return $this->producerFirstName . $this->producerMainName;
+		return $this->producerFirstName . " " . $this->producerMainName;
 	}
 }
 
 class ShopProductWriter {
 	public function write(ShopProduct $shopProduct) {
-		$str = $shopProduct->title . ": " . $shopProduct->getProducer() . " (" . $shopProduct->price . ")";
+		$str = $shopProduct->title . ": " . $shopProduct->getProducer() . " (" . $shopProduct->price . ")\n";
 		print $str;
 	}
-
 }
