@@ -18,11 +18,11 @@ class ShopProduct implements Chargeable, IdentityObject {
 		$this->price = $price;
 	}
 
-	public function getProducer() {
+	public function getProducer():string {
 		return $this->producerFirstName . " " . $this->producerMainName;
 	}
 
-	public function getSummaryLine() {
+	public function getSummaryLine():string {
 		$base  = "$this->title ($this->producerMainName, ";
 		$base .= "$this->producerFirstName)";
 		return $base;
@@ -44,7 +44,7 @@ class ShopProduct implements Chargeable, IdentityObject {
 		$this->id = $id;
 	}
 
-	public static function getInstance($id, PDO $pdo) {
+	public static function getInstance(int $id, PDO $pdo):ShopProduct {
 		$stmt = $pdo->prepare("select * from products where id=?");
 		$result = $stmt->execute(array($id));
 		$row = $stmt->fetch();
@@ -95,7 +95,7 @@ class BookProduct extends ShopProduct {
 		return $this->numPages;
 	}
 
-	function getSummaryLine()
+	function getSummaryLine():string
 	{
 		$base  = parent::getSummaryLine();
 		$base .= ": $this->numPages стр.";
@@ -115,7 +115,7 @@ class CDProduct extends ShopProduct {
 		return $this->playLength;
 	}
 
-	function getSummaryLine()
+	function getSummaryLine():string
 	{
 		$base  = parent::getSummaryLine();
 		$base .= ": Время звучания - $this->playLength";
