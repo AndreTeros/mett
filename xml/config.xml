@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<conf>
+    <item name="user">bob</item>
+    <item name="pass">pass</item>
+    <item name="host">local</item>
+</conf>

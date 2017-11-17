@@ -1,13 +1,16 @@
 <?php
-function foo($x, $y):int {
-	return $x+$y;
-}
+//require 'itest.php';
+//require '../core.php';
+require 'core.php';
+use Core\Some\Gg\Wp;
+$n = new Wp\Hello();
+?>
 
-var_dump(foo(2,3));
+<script>
 
-class Test {
-	function foo($a) {
-		return $a*2;
-	}
+	(function test11() {
+		console.log("1122");
+	})();
 
-}
+	test11();
+</script>
