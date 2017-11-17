@@ -5,4 +5,8 @@ Class Hello {
 	function __construct() {
 		echo "hello!";
 	}
+
+	function foobar():string {
+		return "gogo";
+	}
 }
